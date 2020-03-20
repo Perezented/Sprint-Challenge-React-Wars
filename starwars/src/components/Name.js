@@ -1,5 +1,11 @@
 import React from "react";
-export default function Name(props) {
-    console.log(props);
-    return <h3>Name Here</h3>;
+
+export default function Person(props) {
+    console.log(props.name);
+    return (
+        <>
+            <h3>{props.name}</h3>
+            <h6>{props.birthYear}</h6>
+        </>
+    );
 }

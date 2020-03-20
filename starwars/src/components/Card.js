@@ -10,9 +10,9 @@ export default function Card() {
             .get("https://swapi.co/api/people/")
             .then(res => {
                 const peopleList = res.data.results;
-                console.log(peopleList);
+                // console.log(peopleList);
                 setPerson(peopleList);
-                peopleList.map(val => console.log(val));
+                // peopleList.map(val => console.log(val));
             })
             .catch(error =>
                 console.log(
@@ -23,10 +23,9 @@ export default function Card() {
     }, []);
     return (
         <section>
-            {person.map(p => {
-                return <Name name={p.name} />;
+            {person.map((p, i) => {
+                return <Name name={p.name} key={i} birthYear={p.birth_year} />;
             })}
-            <Name />
         </section>
     );
 }
