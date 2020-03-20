@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
-import Name from "./Name";
+import Person from "./Name";
+
 export default function Card() {
     // https://swapi.co/api/people/
     const [person, setPerson] = useState([]);
@@ -24,7 +25,14 @@ export default function Card() {
     return (
         <section>
             {person.map((p, i) => {
-                return <Name name={p.name} key={i} birthYear={p.birth_year} />;
+                return (
+                    <Person
+                        name={p.name}
+                        key={i}
+                        birthYear={p.birth_year}
+                        wholePerson={p}
+                    />
+                );
             })}
         </section>
     );

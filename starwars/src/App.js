@@ -1,7 +1,7 @@
 import React from "react";
 import "./App.css";
 import Card from "./components/Card";
-
+import SwitchHeader from "./components/SwitchHeader";
 const App = () => {
     // Try to think through what state you'll need for this app before starting. Then build out
     // the state properties here.
@@ -14,7 +14,7 @@ const App = () => {
     return (
         <div className="App">
             <h1 className="Header">React Wars</h1>
-            <h2>To Display Everyone from the known reaches of the Galaxies!</h2>
+            <SwitchHeader />
             <Card />
         </div>
     );
