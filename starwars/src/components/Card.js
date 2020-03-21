@@ -11,7 +11,7 @@ export default function Card() {
             .get("https://swapi.co/api/people/")
             .then(res => {
                 const peopleList = res.data.results;
-                // console.log(peopleList);
+                console.log(res);
                 setPerson(peopleList);
                 // peopleList.map(val => console.log(val));
             })

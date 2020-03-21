@@ -13,13 +13,23 @@ export default function Person(props) {
         color: #fff;
         display: flex;
         justify-content: space-around;
+        span {
+            font-size: 2rem;
+            border: 1px solid white;
+            border-radius: 15px;
+            background: black;
+        }
     `;
-
+    const NameBadge = styled.div`
+        width: 25%;
+    `;
     return (
         <PersonBorder>
             <div>
                 {" "}
-                <h3>Name: {props.name}</h3>
+                <h3>
+                    Name: <span>{props.name}</span>
+                </h3>
                 <h6>Birth Year: {props.birthYear}</h6>
             </div>
             <PersonInfo info={props.wholePerson} />
