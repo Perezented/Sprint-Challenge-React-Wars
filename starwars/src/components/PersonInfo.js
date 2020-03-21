@@ -4,7 +4,7 @@ import styled from "styled-components";
 const PplInfo = styled.div`
     display: grid;
     align-items: center;
-    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-columns: 1fr 1.5fr;
 `;
 const InfoLi = styled.li`
     list-style-type: none;
@@ -12,13 +12,14 @@ const InfoLi = styled.li`
 `;
 
 export default function PersonInfo(props) {
+    // console.log(props.info);
     const ColoredLi = styled.li`
         color: ${props.info.eye_color};
         width: 70%;
         list-style-type: none;
         text-align: left;
     `;
-    console.log(props.info);
+
     return (
         <PplInfo>
             <InfoLi>Gender: {props.info.gender}</InfoLi>
