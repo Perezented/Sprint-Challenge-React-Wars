@@ -12,15 +12,18 @@ const SidingSection = styled.section`
 export default function Card() {
     // https://swapi.co/api/people/
     const [person, setPerson] = useState([]);
+    const [planetUrl, setURL] = useState([]);
 
     useEffect(() => {
         axios
-            .get("https://swapi.co/api/people/")
-            .then(res => {
+            .get("https://swapi.co/api/people/", `${planetUrl}`)
+            .then((res, res0) => {
                 const peopleList = res.data.results;
-                console.log(res);
+                console.log(res, res0);
                 setPerson(peopleList);
                 console.log(res.data.results[0].homeworld);
+                setURL(res.data.results[0].homeworld);
+
                 // peopleList.map(val => console.log(val));
             })
             .catch(error =>
