@@ -1,11 +1,17 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
-import Person from "./Name";
+import Person from "./Person";
+import styled from "styled-components";
 
 export default function Card() {
     // https://swapi.co/api/people/
     const [person, setPerson] = useState([]);
 
+    const SidingSection = styled.section`
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        max-width: 100%;
+    `;
     useEffect(() => {
         axios
             .get("https://swapi.co/api/people/")
@@ -23,7 +29,7 @@ export default function Card() {
             );
     }, []);
     return (
-        <section>
+        <SidingSection>
             {person.map((p, i) => {
                 return (
                     <Person
@@ -34,6 +40,6 @@ export default function Card() {
                     />
                 );
             })}
-        </section>
+        </SidingSection>
     );
 }

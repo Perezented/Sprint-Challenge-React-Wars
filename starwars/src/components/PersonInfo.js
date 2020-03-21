@@ -2,7 +2,6 @@ import React from "react";
 import styled from "styled-components";
 
 const PplInfo = styled.div`
-    width: 55%;
     display: grid;
     align-items: center;
     grid-template-columns: 1fr 1fr 1fr;
